@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+:root {
+  --primary: #ffffff; /* Light background */
+  --secondary: #f5f5f5; /* Lighter secondary background */
+  --glow: rgba(90, 3, 90, 0.872); /* purple highlight */
+  --accent: #e53935; /* Subtle red accent */
+  --text-dark: #333333; /* Dark text for contrast */
+  --text-muted: #666666; /* Muted text for secondary info */
+  --border: #dddddd; /* Light border */
+  --br: 1.4rem; /* Border radius */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--primary);
+  font-family: "Nunito Sans", sans-serif;
+  color: var(--text-dark);
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+p,
+a {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: var(--glow);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--glow);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #005bb5;
+}
+
+/* Error and Loading States */
+.error,
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.error h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.error p {
+  color: var(--text-muted);
+  margin-top: 1rem;
+}
+
+/* Header */
+header {
+  background-color: var(--secondary);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 3rem 4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  color: var(--glow);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.search-box input {
+  border-radius: var(--br) 0 0 var(--br);
+  color: var(--text-dark);
+  font-size: 1.8rem;
+  padding: 1.1rem 2rem;
+  width: 40rem;
+  border: 1px solid var(--border);
+}
+
+.search-box input:focus {
+  outline: none;
+  border: 1px solid var(--glow);
+}
+
+.search-box button {
+  border-radius: 0 var(--br) var(--br) 0;
+  background-color: var(--glow);
+  color: var(--primary);
+  padding: 1.1rem 2rem;
+}
+
+.search-box button:hover {
+  background-color: var(--accent);
+}
+
+.search-box button:disabled {
+  background-color: var(--border);
+  color: var(--text-muted);
+}
+
+/* Main Content */
+.content,
+.error,
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  margin: 2rem 4rem;
+}
+
+.profile-card {
+  background-color: var(--secondary);
+  border-radius: var(--br);
+  padding: 2rem 4rem;
+  margin: 10rem auto;
+  height: 100%;
+  width: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-details {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.user-details h1 {
+  color: var(--glow);
+}
+
+.user-profile-img img {
+  border-radius: var(--br);
+  width: 14rem;
+  border: 2px solid var(--border);
+}
+
+.stats p {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+}
+
+.created {
+  color: var(--text-muted);
+  font-size: 1.6rem;
+}
+
+/* Repositories */
+.repos h2 {
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.repo {
+  border-radius: var(--br);
+  background-color: var(--secondary);
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease-in-out;
+}
+
+.repo:hover {
+  background-color: var(--primary);
+  border-color: var(--glow);
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.description,
+.language {
+  font-size: 1.6rem;
+  color: var(--text-muted);
+}
+
+/* Modal */
+.modal-container {
+  border-radius: var(--br);
+  background-color: var(--primary);
+  max-width: 60rem;
+  padding: 2rem 4rem;
+  width: 40%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn:hover {
+  color: var(--glow);
+}
